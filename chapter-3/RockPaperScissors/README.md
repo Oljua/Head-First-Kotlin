@@ -9,6 +9,7 @@ fun getGameChoice(........................) =
 ``` 
 
 Варианты:  
+```java
 Array<String> (   
 optionsParam:   
 (   
@@ -18,3 +19,4 @@ optionsParam:
 .toInt()   
 optionsParam   
 * Math.random()   
+``` 
