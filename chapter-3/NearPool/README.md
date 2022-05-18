@@ -23,4 +23,4 @@ fun printResult(userChoice: String, gameChoice: String) {
  println("You chose $userChoice. I chose $gameChoice. $result")
 }
 ``` 
-![](./screenshots/TaskNearPool.png)
+![](https://github.com/Oljua/Head-First-Kotlin/blob/main/screenshots/TaskNearPool.png)
