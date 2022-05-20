@@ -6,14 +6,13 @@
 
 ```java  
 fun main(args: Array<String>) {
- var x = 1
- while (x < ........) {
- ........ (if (x == ........) "Yab" else "Dab")
- ........("ba")
- x = x + 1
- }
- if (x == ........) println("Do")
+    var x = 1
+    while (x < ........) {
+        ........ (if (x == ........) "Yab" else "Dab")
+        ........("ba")
+        x = x + 1
+    }
+    if (x == ........) println("Do")
 }
 ``` 
-
-Варианты: println print 4 4 3 2 1 2 3 1 print println
+![](https://github.com/Oljua/Head-First-Kotlin/blob/main/screenshots/TaskMagnetsApp1.png)

@@ -23,7 +23,6 @@ class TapeDeck {
 }
 
 fun main() {
-    val t = TapeDeck()
     t.hasRecorder = true
     t.playTape()
     t.recordTape()
@@ -33,10 +32,6 @@ fun main() {
 Блок кода B
 ```java  
 class DVDPlayer(var hasRecorder: Boolean) {
-    fun playDVD() {
-        println("DVD playing")
-    }
-
     fun recordDVD() {
         if (hasRecorder) println("DVD recording")
     }
