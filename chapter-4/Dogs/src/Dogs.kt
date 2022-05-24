@@ -4,14 +4,15 @@ class Dog(val name: String, weight_param: Int, breed_param: String) {
         print("Dog $name has been created. ")
     }
 
-    var activities = arrayOf("Walks")
-    val breed = breed_param.toUpperCase()
+    var activities = arrayOf("Walks")     /* Каждый созданный объект Dog содержит свойство activities. Его исходным
+    значением является массив, содержащий значение «Walks» */
+    val breed = breed_param.toUpperCase() // свойства определяются в теле класса
 
-    init {
+    init {                       //  блок инициализации
         println("The breed is $breed.")
     }
 
-    var weight = weight_param
+    var weight = weight_param   // свойства определяются в теле класса
         set(value) {
             if (value > 0) field = value
         }
