@@ -20,10 +20,12 @@
   - [СТАНЬ компилятором](chapter-3/CompilerApp3)
   - [У бассейна](chapter-3/NearPool)
   - [Игра  камень-ножницы-бумага](chapter-3/RockPaperScissors)
-- [ ] Классы и объекты. Высокий класс
+- [x] Классы и объекты. Высокий класс
   - [Приложение Songs](chapter-4/Songs) 
   - [Развлечения с магнитами](chapter-4/MagnetsApp4)
   - [СТАНЬ компилятором](chapter-4/CompilerApp4)
+  - [Приложение Dogs](chapter-4/Dongs)
+  - [У бассейна](chapter-4/NearPoolApp4) 
 - [ ] Подклассы и суперклассы. Наследование 
 - [ ] Абстрактные классы и интерфейсы. Серьезно о полиморфизме 
 - [ ] Классы данных. Работа с данными 
@@ -105,13 +107,13 @@ for (x in 1..100 step 2) println(x)
 - Перебор элементов массива по индексам:
 ```java  
 for (index in optionsParam.indices) {
- println("Index $index has item ${optionsParam[index]}")
+    println("Index $index has item ${optionsParam[index]}")
 }
 ``` 
 - Цикл перебирающий все элементы массива. Индекс элемента присваивается переменной index, а сам элемент — переменной item;
 ```java 
 for ((index, item) in optionsParam.withIndex()) {
- println("Index $index has item $item")
+    println("Index $index has item $item")
 }
 ```
 - Операторы ‘И’ и ‘Или’ (&& и ||)
@@ -127,9 +129,9 @@ toUpperCase и capitalize для создания строки, преобразованной к нижнему регистру
 - Определение класса выглядит следующим образом:
 ```java
 сlass Dog (val name: String, var weight: Int, val breed: String) {
- fun bark() {
- println(if (weight < 20) "Yip!" else "Woof!")
- }
+    fun bark() {
+               println(if (weight < 20) "Yip!" else "Woof!")
+               }
 }
 ```
 - Функция, определенная 
@@ -148,7 +150,7 @@ var myDog = Dog("Fido", 70, "Mixed")
 2. Создание объекта
 3. Связывание объекта с переменной посредством присваивания 
 ссылки.
-- Конструктор выполняется при создании 
+- Конструктор выполняется при создании 
 экземпляра объекта. 
 Он используется для 
 определения свойств 
@@ -166,39 +168,57 @@ class Dog(val name: String, var weight: Int, val breed: String) {
 свойства — переменными
 экземпляров
 - Гибкая инициализация свойств
-Допустим, вы хотите добавить в класс Dog свойство activities и 
-инициализировать его массивом, который по умолчанию содержит значение «Walks». Код, который это делает, выглядит так:
+Допустим, вы хотите добавить в класс Dog свойство activities и 
+инициализировать его массивом, который по умолчанию содержит значение «Walks». Код, который это делает, выглядит так:
 ```java
 class Dog(val name: String, var weight: Int, val breed: String) {
- var activities = arrayOf("Walks")
+    var activities = arrayOf("Walks")
  ...
 }
 ```
 - А может оказаться, что вы хотите изменить значение параметра 
 конструктора перед тем, как присваивать его свойству. Допустим, 
 свойству breed вместо значения, переданного конструктору, 
-должна присваиваться версия строки, преобразованная к верхнему регистру. Для этого функция toUpperCase создает версию 
+должна присваиваться версия строки, преобразованная к верхнему регистру. Для этого функция toUpperCase создает версию 
 строки, преобразованную к верхнему регистру, которая затем 
 присваивается свойству breed:
 ```java
 class Dog(val name: String, var weight: Int, breed_param: String) {
- var activities = arrayOf("Walks")
- val breed = breed_param.toUpperCase()
+    var activities = arrayOf("Walks")
+    val breed = breed_param.toUpperCase()
  ...
 }
 ```
 - Блоки инициализации
 Если свойство должно инициализироваться чем-то более сложным, чем простое выражение, или если при создании каждого объекта должен выполняться дополнительный 
-код, можно использовать один или несколько блоков инициализации. Блоки инициализации выполняются при инициализации объекта сразу же после вызова конструктора 
+код, можно использовать один или несколько блоков инициализации. Блоки инициализации выполняются при инициализации объекта сразу же после вызова конструктора 
 и снабжаются префиксом init. Следующий блок инициализации выводит сообщение 
 каждый раз, когда инициализируется объект Dog:
 ```java
 class Dog(val name: String, var weight: Int, breed_param: String) {
- var activities = arrayOf("Walks")
- val breed = breed_param.toUpperCase()
- init {
- println("Dog $name has been created.")
+    var activities = arrayOf("Walks")
+    val breed = breed_param.toUpperCase()
+    init {
+       println("Dog $name has been created.")
  }
  ...
+}
+```
+- get-метод
+```java
+class Dog(val name: String, var weight: Int, breed_param: String) {
+    var activities = arrayOf("Walks")
+    val breed = breed_param.toUpperCase()
+    val weightInKgs: Double
+    get() = weight / 2.2
+```
+- set-метод
+```java
+class Dog(val name: String, weight_param: Int, breed_param: String) {
+    var activities = arrayOf("Walks")
+    val breed = breed_param.toUpperCase()
+    var weight = weight_param
+    set(value) {
+        if (value > 0) field = value
 }
 ```
